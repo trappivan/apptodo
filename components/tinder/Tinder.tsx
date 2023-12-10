@@ -68,3 +68,11 @@ const styles = StyleSheet.create({
 });
 
 export default Tinder;
+
+/*
+Stack -> pilha de rotas
+	navigation 
+		navigate -> ve se tem a rota, se nao tiver cria a rota e vai para ela
+		push -> cria nova screen e vai pra essa screen
+		popToTop -> vai pra primeira tela da stack
+*/
