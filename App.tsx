@@ -7,16 +7,40 @@ import Tinder from "./components/tinder/Tinder";
 import Bomba from "./components/bomba/Bomba";
 
 export default function App() {
-	const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator();
 
-	return (
-		<>
-			<NavigationContainer>
-				<Stack.Navigator initialRouteName="Bomba">
-					<Stack.Screen name="Tinder" component={Tinder} />
-					<Stack.Screen name="Bomba" component={Bomba} />
-				</Stack.Navigator>
-			</NavigationContainer>
-		</>
-	);
+  return (
+    <>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Bomba">
+          <Stack.Screen
+            name="Tinder"
+            component={Tinder}
+            options={{
+              title: "Tinder",
+              headerTitleAlign: "center",
+              headerTransparent: true,
+              headerRight: () => {
+                return (
+                  <Button
+                    title="Abrir modal"
+                    onPress={() => console.log("botaozaooo")}
+                  />
+                );
+              },
+            }}
+            initialParams={{ itemId: 24, bombaTinder: "perfil do caralho" }}
+          />
+          <Stack.Screen
+            name="Bomba"
+            component={Bomba}
+            options={{
+              title: "Bombaada",
+            }}
+            initialParams={{ itemId: 24, bombaTela: "perfil da bomba" }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
+  );
 }
